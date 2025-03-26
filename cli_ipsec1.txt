@@ -1,0 +1,20 @@
+config vpn ipsec phase1-interface
+    edit RMT-FGT
+        set interface port1
+        set ike-version 2
+        set peertype any
+        set net-device disable
+        set proposal aes256-sha384
+        set dhgrp 5
+        set remote-gw 34.21.86.227
+        set psksecret Fortinet1234$
+    next
+end
+
+config vpn ipsec phase2-interface
+    edit RMT-FGT
+        set phase1name RMT-FGT
+        set proposal aes128-sha1 aes256-sha1 aes128-sha256 aes256-sha256 aes128gcm aes256gcm chacha20poly1305
+    next
+end
+
