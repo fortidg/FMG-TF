@@ -6,7 +6,7 @@ config vpn ipsec phase1-interface
         set net-device disable
         set proposal aes256-sha384
         set dhgrp 5
-        set remote-gw 34.21.86.227
+        set remote-gw $(gcp_fgt_pubip)
         set psksecret Fortinet1234$
     next
 end
