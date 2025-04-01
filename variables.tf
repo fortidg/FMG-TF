@@ -13,18 +13,5 @@ variable cli_templates {
   } 
 }
 
-variable device_list {
-    type = map(object({
-    type = string
-    description = string
-    script = string
-  }))
-  default = {
-    "cli_template_1" = {
-      type = "cli"
-      description = "This is the first CLI template"
-      script = "/home/ubuntu/Terraform/FMG-TF/cli_ipsec1.txt"
-    }
-  } 
-}
+
 
