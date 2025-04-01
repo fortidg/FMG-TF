@@ -29,7 +29,7 @@ resource "fortimanager_packages_firewall_policy" "ipsec_outbound" {
   permit_stun_host = "disable"
   ssl_ssh_profile = "certificate-inspection"
   pkg                     = "terr-pkg"
-  policyid                = 144
+  policyid                = 4
   profile_type            = "single"
   fixedport               = "disable"
   radius_mac_auth_bypass  = "disable"
@@ -54,4 +54,11 @@ resource "fortimanager_packages_firewall_policy" "ipsec_outbound" {
   vlan_cos_fwd            = 255
   vlan_cos_rev            = 255
   wccp                    = "disable"
+}
+
+resource "fortimanager_packages_firewall_policy_move" "out_before_in" {
+  pkg    = "terr-pkg"
+  policy = "4"
+  target = "3"
+  option = "before"
 }

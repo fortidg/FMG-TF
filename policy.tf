@@ -30,7 +30,7 @@ resource "fortimanager_packages_firewall_policy" "outbound" {
   ssl_ssh_profile = "certificate-inspection"
   pkg                     = "terr-pkg"
   fixedport               = "disable"
-  policyid                = 146
+  policyid                = 1
   profile_type            = "single"
   radius_mac_auth_bypass  = "disable"
   reputation_minimum      = 0
@@ -87,7 +87,7 @@ resource "fortimanager_packages_firewall_policy" "east-west" {
   permit_stun_host = "disable"
   ssl_ssh_profile = "certificate-inspection"
   pkg                     = "terr-pkg"
-  policyid                = 147
+  policyid                = 2
   profile_type            = "single"
   fixedport               = "disable"
   radius_mac_auth_bypass  = "disable"
@@ -145,7 +145,7 @@ resource "fortimanager_packages_firewall_policy" "ipsec_inbound" {
   permit_stun_host = "disable"
   ssl_ssh_profile = "certificate-inspection"
   pkg                     = "terr-pkg"
-  policyid                = 145
+  policyid                = 3
   profile_type            = "single"
   fixedport               = "disable"
   radius_mac_auth_bypass  = "disable"
@@ -171,3 +171,4 @@ resource "fortimanager_packages_firewall_policy" "ipsec_inbound" {
   vlan_cos_rev            = 255
   wccp                    = "disable"
 }
+
